@@ -1,0 +1,61 @@
+.body-container{
+    margin-left: 80px;
+    margin-right:80px;
+}
+.font-consolas{
+    font-family:consolas;
+}
+.fullwidth{
+    width: 97%;
+    font-family:consolas;
+    height: 30px;
+    border-radius:5px;
+    font-size:25px;
+    padding-left: 10px;
+}
+.fullwidth:focus{
+    background-color:aquamarine;
+    
+}
+.heading{
+    font-size:25px;
+}
+.bg-antique{
+    background-color:antiquewhite;
+    border-radius: 10px 0px 10px 0px;
+    padding-left:20px;
+}
+.background-black{
+    background-color:black;
+    padding:5px;
+    border-radius: 5px;
+}
+.text-white{
+    color:white;
+}
+.button-green{
+    background-color:greenyellow;
+    font-size: 25px;
+    padding:5px;
+    width:100%;
+    border-radius: 5px;
+    font-family:consolas;
+    border:none;
+}
+.button-yellow{
+    background-color:yellow;
+    font-size: 25px;
+    padding:5px;
+    width:100%;
+    border-radius: 5px;
+    font-family:consolas;
+    border:none;
+}
+
+.alertError{
+    color:whitesmoke; 
+    background-color:#dc3545;
+    font-size:25px;
+    padding:5px;
+    border-radius: 5px;
+}

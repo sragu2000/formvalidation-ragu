@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="mystyle.css">
+    <script src="myscript.js"></script>
+</head>
+<body>
+    <div class="body-container font-consolas">
+        <center>
+            <h1 class="background-black text-white">Register</h1>
+            <!-- <img src="./register.png" height="200"> -->
+        </center>
+        <form name="frm" method="post">
+            <table width="100%">
+                <tr>
+                    <td class="bg-antique">
+                        <label class="heading">First Name</label>
+                    </td>
+                    <td>
+                        <input type="text" class="fullwidth" id="fname" name="fname">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg-antique">
+                        <label class="heading">Last Name</label>
+                    </td>
+                    <td>
+                        <input type="text" class="fullwidth" id="lname" name="lname">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg-antique">
+                        <label class="heading">Date of Birth</label>
+                    </td>
+                    <td>
+                        <input type="date" class="fullwidth" id="dob" name="dob" onchange="getAge()">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg-antique">
+                        <label class="heading">Age</label>
+                    </td>
+                    <td>
+                        <input type="text" class="fullwidth" id="age" name="age" disabled>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg-antique">
+                        <label class="heading">Address</label>
+                    </td>
+                    <td>
+                        <input type="text" class="fullwidth" id="address" name="address">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg-antique">
+                        <label class="heading">Email</label>
+                    </td>
+                    <td>
+                        <input type="text" class="fullwidth" id="email" name="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg-antique">
+                        <label class="heading">User name</label>
+                    </td>
+                    <td>
+                        <input type="text" class="fullwidth" id="username" name="username">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg-antique">
+                        <label class="heading">Password</label>
+                    </td>
+                    <td>
+                        <input type="password" class="fullwidth" id="password" name="password">
+                    </td>
+                </tr>
+                <tr>
+                    <td class="bg-antique">
+                        <label class="heading">Confirm Password</label>
+                    </td>
+                    <td>
+                        <input type="password" class="fullwidth" id="confirmpass" name="confirmpass">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align:center" class="heading">
+                        <input type="checkbox" id="chkbox" onchange="enableButton()"> <a href="#">I accept terms and Conditions</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td><button class="button-green" id="sbt" type="button" onclick="formValidation()" >Register</button></td>
+                    <td><input class="button-yellow" type="reset" value="Clear"></td>
+                </tr>
+            </table><br>
+            <div id="errormsg" style="color: red"></div>
+        </form>
+    </div>
+    <script>
+        enableButton()
+        function enableButton(){
+            if(document.getElementById("chkbox").checked){
+                document.getElementById("sbt").disabled = false;
+            }else{
+                document.getElementById("sbt").disabled = true;
+            }
+        }
+        function getAge() {
+            dateString=document.getElementById("dob").value;
+            var today = new Date();
+            var birthDate = new Date(dateString);
+            var age = today.getFullYear() - birthDate.getFullYear();
+            var m = today.getMonth() - birthDate.getMonth();
+            if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+                age--;
+            }
+            document.getElementById("age").value = age;
+        }
+    </script>
+</body>
+
+
+</html>
